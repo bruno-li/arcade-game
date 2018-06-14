@@ -6,19 +6,28 @@ let Enemy = function(x,y,s) {
     // we've provided one for you to get started
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.x = x;
-    this.y = y;
-    this.s = s;
+    this.x = x; // x position
+    this.y = y; // y position
+    this.s = s; // enemy speed
     this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    this.x += (this.s) * dt;
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    this.x += (this.s) * dt;
+
+    // draw enemies again after they go off the canvas
+    if (this.x > 550) {
+        this.x = -100;
+        this.s = 100 + Math.floor(Math.random() * 500);
+    }
+
+
+
 };
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -47,7 +56,6 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function (keyPress){
     if(keyPress === 'left'){
-        
         if(this.x - 100 < 0){ // dosent allow character to move off the left side of the grid
             this.x = 0; // center the character on the middle of a block
         } else {
@@ -66,7 +74,6 @@ Player.prototype.handleInput = function (keyPress){
         } else {
             this.x += 100; // draw character coordinates to the right every keyPress
         }
-
     } else if (keyPress === 'down') {
         if(this.y + 90 > 380) {
             this.y = 380;
@@ -90,9 +97,11 @@ then places the enemy location according to the array, and set the speed of the 
 cross the screen by generating a random number with the help of update() method.
 */
 enemyLocation.forEach(function(locationY){
-    let enemy = new Enemy(0,locationY,100 + Math.floor(Math.random() * 470));
+    // creates a new Enemy object with a location and random speed and store in enemy variable
+    let enemy = new Enemy(0,locationY,100 + Math.floor(Math.random() * 500));
+    // push the created object to the array
     allEnemies.push(enemy);
-})
+});
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
