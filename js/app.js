@@ -95,7 +95,7 @@ Player.prototype.handleInput = function (keyPress){
 
 // Place the player object in a variable called player
 let player = new Player();
-let enemyLocation = [60,140,220]; // array to store emeny on their correct squares
+let enemyLocation = [60,140,220,300]; // array to store emeny on their correct squares
 
 /* loops through the enemy location array, sets the starting position 0 for Y coordinates,
 then places the enemy location according to the array, and set the speed of the enemy
