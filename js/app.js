@@ -21,13 +21,18 @@ Enemy.prototype.update = function(dt) {
     this.x += (this.s) * dt;
 
     // draw enemies again after they go off the canvas
-    if (this.x > 550) {
+    if (this.x > 480) {
         this.x = -100;
         this.s = 100 + Math.floor(Math.random() * 500);
-    }
+    };
 
 
-
+    // checks for enemies colision, if character is draw back to the start if enemy is hit
+    if ((player.x < this.x + 60) && (player.x + 37 > this.x) && (player.y < this.y + 25) && (30 + player.y > this.y))
+    {
+        player.x = 200;
+        player.y = 385;
+    };
 };
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -76,7 +81,7 @@ Player.prototype.handleInput = function (keyPress){
         }
     } else if (keyPress === 'down') {
         if(this.y + 90 > 380) {
-            this.y = 380;
+            this.y = 385;
         } else {
             this.y += 90;
         }
@@ -119,3 +124,12 @@ document.addEventListener('keyup', function(e) {
     };
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// prevents the windows brower to scrool if arrow keys are pressed
+// source code from https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
