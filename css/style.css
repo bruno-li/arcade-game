@@ -1,61 +1,69 @@
 body {
-    background: #ffffff url('../images/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../images/geometry2.png');
+    /* Background pattern from Subtle Patterns */
     text-align: center;
     font-family: "visitor/visitor1.ttf";
     font-size: 20px;
 }
+
 @font-face {
     font-family: "Visitor";
     src: url("../visitor/visitor1.ttf");
-  }
+}
 
-  /* https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
-  .modalDialog {
-	position: fixed;
-	font-family: "Visitor", Helvetica, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.8);
-	z-index: 999;
-    opacity:0;
+
+/* modal from: https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
+.modalDialog {
+    position: fixed;
+    font-family: "Visitor", Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    opacity: 0;
     pointer-events: none;
     transition: opacity 400ms ease-in;
-     /* suport for browsers */
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-}
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
+    /* suport for browsers */
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
 }
 
-.modalDialog > div {
-	width: 400px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 5px;
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 5px;
     background: #fff;
 }
 
 .close {
-	background:#5c5a5a;
-	color:#fff;
+    background: #5c5a5a;
+    color: #fff;
     line-height: 30px;
     font-size: 24px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -15px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -15px;
     width: 44px;
-    height: 34px;;
-	text-decoration: none;
+    height: 34px;
+    ;
+    text-decoration: none;
     font-weight: bold;
     border-radius: 18px;
     /* suport for browsers */
-	-webkit-border-radius: 18px;
-	-moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
 }
-.close:hover { background: #cd0e0e; }
+
+.close:hover {
+    background: #cd0e0e;
+}
