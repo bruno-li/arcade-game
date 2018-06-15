@@ -1,3 +1,11 @@
 body {
+    background: #ffffff url('../images/geometry2.png'); /* Background pattern from Subtle Patterns */
     text-align: center;
+    font-family: "visitor/visitor1.ttf";
+    font-size: 30px;
 }
+@font-face {
+    font-family: "Visitor";
+    src: url("../visitor/visitor1.ttf");
+  }
+

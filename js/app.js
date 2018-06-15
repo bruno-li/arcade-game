@@ -1,3 +1,10 @@
+let div = document.createElement('div');
+div.setAttribute('id', 'scoreBoard');
+document.body.appendChild(div);
+let scoreHeader = document.createElement('h2');
+div.appendChild(scoreHeader);
+let score = 0;
+let goal = false;
 let allEnemies = [];
 
 // Enemies our player must avoid
@@ -28,15 +35,17 @@ Enemy.prototype.update = function(dt) {
 
 
     // checks for enemies colision, if character is draw back to the start if enemy is hit
+    // source: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
     if ((player.x < this.x + 60) && (player.x + 37 > this.x) && (player.y < this.y + 25) && (30 + player.y > this.y))
     {
-        player.x = 200;
+        player.x = 200; // draw character back to the start
         player.y = 385;
     };
 };
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
 
 };
 
@@ -47,19 +56,22 @@ Enemy.prototype.render = function() {
 let Player = function (){
     //draws character to start on the middle
     this.sprite = 'images/char-boy.png';
+    this.score = 0;
     this.x = 200;
     this.y = 385;
 };
 
-Player.prototype.update = function() {
-   
-};
+
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.font = '30pt visitor';
+    ctx.fillText('Score' + ' ' + this.score, 0, 30); // Draw score board on the canvas
+
 };
 
 Player.prototype.handleInput = function (keyPress){
+
     if(keyPress === 'left'){
         if(this.x - 100 < 0){ // dosent allow character to move off the left side of the grid
             this.x = 0; // center the character on the middle of a block
@@ -67,8 +79,9 @@ Player.prototype.handleInput = function (keyPress){
             this.x -= 100;
         }
     } else if (keyPress === 'up') {
-
         if(this.y - 85 < 0){
+            goal = true;
+            player.update(); // call update method to update score
             this.y = 380; // draw character back to the start
         } else {
             this.y -= 85; // draw the character in every square according to y coordinate
@@ -88,6 +101,16 @@ Player.prototype.handleInput = function (keyPress){
     }
 } // end of handleInput
 
+Player.prototype.update = function() {
+
+    ctx.clearRect(0, 0, 500, 500);
+
+    if (goal) {
+        this.score++;
+        goal = false;
+    }
+
+}
 // Now instantiate your objects.
 
 // Place all enemy objects in an array called allEnemies
