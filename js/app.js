@@ -20,36 +20,37 @@ let Enemy = function(x, y, s) {
   this.sprite = "images/enemy-bug.png";
 }; // enemy constructor
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-  // You should multiply any movement by the dt parameter
-  this.x += this.s * dt;
+Enemy.prototype = {
+  constructor: Enemy, // points to our constructor Enemy
 
-  // logic to draw enemies again after they go off the canvas
-  if (this.x > 480) {
-    this.x = -100;
-    this.s = 100 + Math.floor(Math.random() * 400);
-  }
+  update: function(dt) {
+    // You should multiply any movement by the dt parameter
+    this.x += this.s * dt;
 
-  // checks for enemies colision, character is draw back to the start if hit an enemy
-  // source: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-  if (
-    player.x < this.x + 60 &&
-    player.x + 37 > this.x &&
-    player.y < this.y + 25 &&
-    30 + player.y > this.y
-  ) {
-    player.x = 200; // draw character back to the start
-    player.y = 385;
-    player.score = 0; // resets score to 0
-  }
-}; //update
+    // logic to draw enemies again after they go off the canvas
+    if (this.x > 480) {
+      this.x = -100;
+      this.s = 100 + Math.floor(Math.random() * 400);
+    } 
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}; // render
+    // checks for enemies colision, character is draw back to the start if hit an enemy
+    // source: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    if (
+      player.x < this.x + 60 &&
+      player.x + 37 > this.x &&
+      player.y < this.y + 25 &&
+      30 + player.y > this.y
+    ) {
+      player.x = 200; // draw character back to the start
+      player.y = 385;
+      player.score = 0; // resets score to 0
+    }
+  }, //update function
+
+  render: function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  } // render function
+};
 
 /* ---------------PLAYER CONSTRUCTOR AND ITS PROTOTYPE ------------------- */
 
@@ -62,17 +63,17 @@ let Player = function() {
   this.y = 385;
 }; // Player constructor
 
- // Player Prototype
+// Player Prototype
 Player.prototype = {
-  constructor: Player, // points to our Player constructor for inheritance
+  constructor: Player, // points to our Player constructor
 
   render: function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     ctx.font = "30pt visitor"; // custom font
     ctx.fillText("Score:" + " " + this.score, 0, 30); // Draw score board on the canvas
   }, // render
-   
-  // Update 
+
+  // Update
   update: function() {
     ctx.clearRect(0, 0, 500, 500);
     //switches goal to true and add to score board
@@ -82,8 +83,8 @@ Player.prototype = {
     }
   }, // update
 
- // Event Listener
-  handleInput : function(keyPress) {
+  // Event Listener
+  handleInput: function(keyPress) {
     if (keyPress === "left") {
       if (this.x - 100 < 0) {
         // dosent allow character to move off the left side of the grid
@@ -113,10 +114,8 @@ Player.prototype = {
         this.y += 85; // // draw character coordinates down to every squares for every keyPress
       }
     } // end of if/else statements
-  }// end of handleInput
+  } // end of handleInput
 };
-
-
 
 // Place the player object in a variable called player
 // instantiate new Player constructor
@@ -133,7 +132,6 @@ const createEnemies = enemyLocation.forEach(function(location) {
   // push the created object to the array
   allEnemies.push(enemy);
 }); // forEach
-
 
 /* ---------------EVENT LISTENERS ------------------- */
 
