@@ -6,17 +6,17 @@ This game project is part of the curriculum from Udacity Front End Web Developer
 # Main
 ===============================
 
-In this game a bug boy is trying to cross the road to reach the river. Since he so small he can be easily eaten by those bugs flygin around the map. Help our bug boy reach the river safe;y.
+In this game a bug boy is trying to cross the road to reach the river. Since he so small he can be easily eaten by those bugs flygin around the map. Help our bug boy reach the river safely.
 
 # How to play
+
 You can find the live game clicking => [here](https://leizifei.github.io/arcade-game/#openModal).
 Alternatively, you can clone or download the repo to your local machine.
 
 **Download** -  Click the "Clone or download" button then click "Download ZIP" and soon you'll get a zip file when your download finishes. Unzip the file, open the index.html file on your browser.
 
-**Clone** - Type into your terminal or command prompt the following: $ git clone https://github.com/leizifei/arcade-game.git When it finishes cloning the files, open the index.html file on your browser.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+**Clone** - Type into your terminal or command prompt the following: 
+$ git clone https://github.com/leizifei/arcade-game.git When it finishes cloning the files, open the index.html file on your browser.
 
 # Controls
 You can choose to use the arrow keys or keyboard to move the character.
