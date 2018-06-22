@@ -1,6 +1,32 @@
-frontend-nanodegree-arcade-game
+#Classic Arcade Game - The Frogger
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This game project is part of the curriculum from Udacity Front End Web Developer.
+
+#Main
+===============================
+In this game a bug boy is trying to cross the road to reach the river. Since he so small he can be easily eaten by those bugs flygin around the map. Help our bug boy reach the river safe;y.
+
+#How to play
+You can find the live game clicking => [here](https://leizifei.github.io/arcade-game/#openModal).
+Alternatively, you can clone or download the repo to your local machine.
+
+**Download** -  Click the "Clone or download" button then click "Download ZIP" and soon you'll get a zip file when your download finishes. Unzip the file, open the index.html file on your browser.
+
+**Clone** - Type into your terminal or command prompt the following: $ git clone https://github.com/leizifei/arcade-game.git When it finishes cloning the files, open the index.html file on your browser.
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+
+#Controls
+You can choose to use the arrow keys or keyboard to move the character.
+
+-left: ← or A to move left.
+-right: → or D to move right.
+-up: ↑ or W to move up.
+-down:  ↓ or S to move down.
+
+#Reources
+ https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/
+ https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+ https://classroom.udacity.com/courses/ud015/lessons/2593668699/concepts/26033786850923
+ https://classroom.udacity.com/courses/ud015/lessons/2593668700/concepts/26167386270923

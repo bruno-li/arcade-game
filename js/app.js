@@ -1,5 +1,3 @@
-//TODO: ADD A TIMER AND A RESULT MODAL
-
 // Global variables
 let goal = false; // to keep track of the score
 let allEnemies = []; // to store enemies objects
@@ -22,7 +20,6 @@ let Enemy = function(x, y, s) {
 
 Enemy.prototype = {
   constructor: Enemy, // points to our constructor Enemy
-
   update: function(dt) {
     // You should multiply any movement by the dt parameter
     this.x += this.s * dt;
@@ -31,7 +28,7 @@ Enemy.prototype = {
     if (this.x > 480) {
       this.x = -100;
       this.s = 100 + Math.floor(Math.random() * 400);
-    } 
+    }
 
     // checks for enemies colision, character is draw back to the start if hit an enemy
     // source: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
@@ -66,7 +63,6 @@ let Player = function() {
 // Player Prototype
 Player.prototype = {
   constructor: Player, // points to our Player constructor
-
   render: function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     ctx.font = "30pt visitor"; // custom font
@@ -117,7 +113,6 @@ Player.prototype = {
   } // end of handleInput
 };
 
-// Place the player object in a variable called player
 // instantiate new Player constructor
 let player = new Player();
 
@@ -125,10 +120,9 @@ let player = new Player();
 then places the enemy location according to the array, and set the speed of the enemy
 crossing the screen by generating a random number with the help of update() method.
 */
-
-// creates a new Enemy object with arguments for location and random speed and store inside enemy variable
 const createEnemies = enemyLocation.forEach(function(location) {
-  let enemy = new Enemy(0, location, 120 + Math.floor(Math.random() * 400));
+  // creates a new Enemy object with arguments for location and random speed and store inside enemy variable
+  let enemy = new Enemy(0, location, 120 + Math.floor(Math.random() * 400)); 
   // push the created object to the array
   allEnemies.push(enemy);
 }); // forEach
