@@ -1,13 +1,13 @@
-#Classic Arcade Game - The Frogger
+# Classic Arcade Game - The Frogger
 ===============================
 
 This game project is part of the curriculum from Udacity Front End Web Developer.
 
-#Main
+# Main
 ===============================
 In this game a bug boy is trying to cross the road to reach the river. Since he so small he can be easily eaten by those bugs flygin around the map. Help our bug boy reach the river safe;y.
 
-#How to play
+# How to play
 You can find the live game clicking => [here](https://leizifei.github.io/arcade-game/#openModal).
 Alternatively, you can clone or download the repo to your local machine.
 
@@ -17,15 +17,15 @@ Alternatively, you can clone or download the repo to your local machine.
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
-#Controls
+# Controls
 You can choose to use the arrow keys or keyboard to move the character.
 
--left: ← or A to move left.
--right: → or D to move right.
--up: ↑ or W to move up.
--down:  ↓ or S to move down.
+* left: ← or A to move left.
+* right: → or D to move right.
+* up: ↑ or W to move up.
+* down:  ↓ or S to move down.
 
-#Reources
+# Reources
  https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/
  https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
  https://classroom.udacity.com/courses/ud015/lessons/2593668699/concepts/26033786850923
