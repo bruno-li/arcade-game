@@ -5,6 +5,7 @@ This game project is part of the curriculum from Udacity Front End Web Developer
 
 # Main
 ===============================
+
 In this game a bug boy is trying to cross the road to reach the river. Since he so small he can be easily eaten by those bugs flygin around the map. Help our bug boy reach the river safe;y.
 
 # How to play
